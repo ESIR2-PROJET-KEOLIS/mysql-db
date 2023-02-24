@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : db:3306
--- Généré le : ven. 24 fév. 2023 à 03:47
+-- Généré le : ven. 24 fév. 2023 à 13:15
 -- Version du serveur : 8.0.32
 -- Version de PHP : 8.1.15
 
@@ -107,7 +107,7 @@ CREATE TABLE `feed_info` (
 --
 
 CREATE TABLE `parcours_geo` (
-  ` parcours_lignes_bus_star_id` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `parcours_lignes_bus_star_id` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `idParcour_geo` varchar(45) NOT NULL,
   `tab_coordonnes` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -119,7 +119,7 @@ CREATE TABLE `parcours_geo` (
 --
 
 CREATE TABLE `parcours_lignes_bus_star` (
-  `id` varchar(45) NOT NULL,
+  `parcours_lignes_bus_star_id` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `datedebutversion` text,
   `datefinversion` text,
   `estversionactive` text,
