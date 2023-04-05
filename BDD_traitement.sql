@@ -140,6 +140,29 @@ CREATE TABLE `parcours_lignes_bus_star` (
   `visibilite` text,
   `geo_point_2d (verifier ce que c'est)` text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+                 
+
+--
+-- Structure de la table `simulation_en_toute_heure`
+--
+
+CREATE TABLE `simulation_en_toute_heure` (
+  `trip_id` varchar(45) NOT NULL,
+  `min_departure_time` text,
+  `max_arrival_time` text,
+  `tab_coordonnes` text,
+  `route_short_name` text,
+  `monday` binary(1) DEFAULT NULL,
+  `tuesday` binary(1) DEFAULT NULL,
+  `wednesday` binary(1) DEFAULT NULL,
+  `thursday` binary(1) DEFAULT NULL,
+  `friday` binary(1) DEFAULT NULL,
+  `saturday` binary(1) DEFAULT NULL,
+  `sunday` binary(1) DEFAULT NULL,
+  `direction_id` varchar(45) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+COMMIT;
+
 
 -- --------------------------------------------------------
 
