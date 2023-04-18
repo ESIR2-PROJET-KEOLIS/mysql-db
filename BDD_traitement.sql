@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : db:3306
--- Généré le : mar. 11 avr. 2023 à 13:50
+-- Généré le : mar. 18 avr. 2023 à 09:29
 -- Version du serveur : 8.0.32
 -- Version de PHP : 8.1.15
 
@@ -135,7 +135,7 @@ CREATE TABLE `parcours_lignes_bus_star` (
   `idarretarrivee` text,
   `nomarretarrivee` text,
   `estaccessiblepmr` text,
-  `longueur (passÃ© de m Ã  cm)` varchar(45) DEFAULT NULL,
+  `longueur` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `couleurtrace` text,
   `visibilite` text,
   `geo_point_2d (verifier ce que c'est)` text
@@ -187,28 +187,6 @@ CREATE TABLE `shapes` (
   `shape_pt_lon` double DEFAULT NULL,
   `shape_pt_sequence` varchar(45) DEFAULT NULL,
   `shape_dist_traveled` text
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `simulation_en_toute_heure`
---
-
-CREATE TABLE `simulation_en_toute_heure` (
-  `trip_id` varchar(45) NOT NULL,
-  `min_departure_time` text,
-  `max_arrival_time` text,
-  `tab_coordonnes` text,
-  `route_short_name` text,
-  `monday` binary(1) DEFAULT NULL,
-  `tuesday` binary(1) DEFAULT NULL,
-  `wednesday` binary(1) DEFAULT NULL,
-  `thursday` binary(1) DEFAULT NULL,
-  `friday` binary(1) DEFAULT NULL,
-  `saturday` binary(1) DEFAULT NULL,
-  `sunday` binary(1) DEFAULT NULL,
-  `direction_id` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
@@ -272,24 +250,6 @@ CREATE TABLE `trips` (
 --
 -- Index pour les tables déchargées
 --
-
---
--- Index pour la table `simulation_en_toute_heure`
---
-ALTER TABLE `simulation_en_toute_heure`
-  ADD KEY `idx_trip_id` (`trip_id`),
-  ADD KEY `idx_min_departure_time` (`min_departure_time`(255)),
-  ADD KEY `idx_max_arrival_time` (`max_arrival_time`(255)),
-  ADD KEY `idx_tab_coordonnes` (`tab_coordonnes`(255)),
-  ADD KEY `idx_route_short_name` (`route_short_name`(255)),
-  ADD KEY `idx_monday` (`monday`),
-  ADD KEY `idx_tuesday` (`tuesday`),
-  ADD KEY `idx_wednesday` (`wednesday`),
-  ADD KEY `idx_thursday` (`thursday`),
-  ADD KEY `idx_friday` (`friday`),
-  ADD KEY `idx_saturday` (`saturday`),
-  ADD KEY `idx_sunday` (`sunday`),
-  ADD KEY `idx_direction_id` (`direction_id`);
 
 --
 -- Index pour la table `stop_times`
